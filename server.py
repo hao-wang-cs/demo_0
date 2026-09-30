@@ -27,7 +27,7 @@ def load_env():
 
 load_env()
 API_URL = os.getenv("TENSORX_API_URL", "https://api.tensorx.ai/v1").rstrip("/")
-MODEL = os.getenv("TENSORX_MODEL", "meta-llama/llama-3.1-8b-instruct")
+MODEL = os.getenv("TENSORX_MODEL", "z-ai/glm-5.3-flash")
 PORT = int(os.getenv("PORT", "3000"))
 HOST = os.getenv("HOST", "0.0.0.0")
 
