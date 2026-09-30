@@ -29,6 +29,7 @@ load_env()
 API_URL = os.getenv("TENSORX_API_URL", "https://api.tensorx.ai/v1").rstrip("/")
 MODEL = os.getenv("TENSORX_MODEL", "meta-llama/llama-3.1-8b-instruct")
 PORT = int(os.getenv("PORT", "3000"))
+HOST = os.getenv("HOST", "0.0.0.0")
 
 
 def https_context():
@@ -122,4 +123,4 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     print(f"TensorX chat running at http://localhost:{PORT}")
-    ThreadingHTTPServer(("localhost", PORT), Handler).serve_forever()
+    ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
